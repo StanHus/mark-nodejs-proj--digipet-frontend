@@ -18,7 +18,7 @@ function App() {
     // try... catch documentation:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
     try {
-      const res = await fetch(`https://git.heroku.com/nameless-headland-52507.git${endpoint}`);
+      const res = await fetch(`https://nameless-headland-52507.herokuapp.com${endpoint}`);
       const body = await res.json();
       setMessage(body.message);
       setDigipetStats(body.digipet);
