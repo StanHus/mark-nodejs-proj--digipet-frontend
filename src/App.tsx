@@ -42,9 +42,9 @@ function App() {
     <main>
       <h1>Digipet 1.0</h1>
       {isFirstLoad && <p>Loading...</p>}
-      {message && <p>{message}</p>}
+      {message && <h2>{message}</h2>}
       <hr />
-      <DigipetData digipet={digipetStats} />
+        <div className = "stats"><DigipetData digipet={digipetStats} /> </div>
       <hr />
       <div className = "actions">
         <DigipetActions 

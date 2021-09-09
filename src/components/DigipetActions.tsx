@@ -1,6 +1,4 @@
-/**
- * Represents data which is used to make the UI for a DigipetAction.
- */
+import "../css/style.css"
 export interface DigipetAction {
   /** The action name */
   name: string;
@@ -22,7 +20,7 @@ function DigipetActions({ actions }: Props) {
     <>
       {actions.map(({ name, handler = defaultHandler }) => (
         // using destructuring with a default value
-        <button key={name} onClick={handler}>
+        <button className = "action" key={name} onClick={handler}>
           {name}
         </button>
       ))}
