@@ -1,0 +1,15 @@
+h1 {
+    background-color: rgb(45, 158, 0);
+    color: white;
+    text-align: center;
+    padding: 2%;
+
+}
+body {
+margin: 0
+}
+
+.actions {
+    text-align: center;
+    flex: auto;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DigipetActions from "./components/DigipetActions";
 import DigipetData from "./components/DigipetData";
+import "./css/style.css"
 
 export interface Digipet {
   happiness: number;
@@ -12,6 +13,7 @@ function App() {
   const [isFirstLoad, setIsFirstLoad] = useState(true);
   const [message, setMessage] = useState<string>();
   const [digipetStats, setDigipetStats] = useState<Digipet>();
+  const [version, setVersion] = useState<number>(0)
 
   const loadDataFromEndpoint = async (endpoint: `/${string}`) => {
     // try... catch documentation:
@@ -39,14 +41,15 @@ function App() {
 
   return (
     <main>
-      <h1>Digipet</h1>
+      <h1>Digipet 1.{version}</h1>
       {isFirstLoad && <p>Loading...</p>}
       {message && <p>{message}</p>}
       <hr />
       <DigipetData digipet={digipetStats} />
       <hr />
-      <DigipetActions
-        actions={[
+      <div className = "actions">
+        <DigipetActions 
+         actions={[
           {
             name: "Hatch",
             handler: () => loadDataFromEndpoint("/digipet/hatch"),
@@ -55,9 +58,21 @@ function App() {
             name: "Walk",
             handler: () => loadDataFromEndpoint("/digipet/walk"),
           },
-          { name: "Feed" },
+          { name: "Feed",
+            handler: () => loadDataFromEndpoint("/digipet/feed"),
+          },
+          { name: "Train",
+            handler: () => loadDataFromEndpoint("/digipet/train"),
+          },  
+          { name: "Ignore",
+            handler: () => loadDataFromEndpoint("/digipet/ignore"),
+          },
+          { name: "Rehome",
+            handler: () => loadDataFromEndpoint("/digipet/rehome"),
+          },
         ]}
-      />
+        />
+        </div>
     </main>
   );
 }
