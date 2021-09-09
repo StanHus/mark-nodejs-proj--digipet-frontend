@@ -9,7 +9,7 @@ export interface DigipetAction {
 }
 
 interface Props {
-  actions: DigipetAction[];
+  actions: DigipetAction[],
 }
 
 function DigipetActions({ actions }: Props) {

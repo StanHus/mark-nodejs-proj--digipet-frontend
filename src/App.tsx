@@ -13,7 +13,6 @@ function App() {
   const [isFirstLoad, setIsFirstLoad] = useState(true);
   const [message, setMessage] = useState<string>();
   const [digipetStats, setDigipetStats] = useState<Digipet>();
-  const [version, setVersion] = useState<number>(0)
 
   const loadDataFromEndpoint = async (endpoint: `/${string}`) => {
     // try... catch documentation:
@@ -41,7 +40,7 @@ function App() {
 
   return (
     <main>
-      <h1>Digipet 1.{version}</h1>
+      <h1>Digipet 1.0</h1>
       {isFirstLoad && <p>Loading...</p>}
       {message && <p>{message}</p>}
       <hr />
@@ -72,6 +71,7 @@ function App() {
           },
         ]}
         />
+
         </div>
     </main>
   );
